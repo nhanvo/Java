@@ -26,6 +26,12 @@ public class StringExample {
 
         // String region Match
         strEx.StringRegionMatch();
+
+        // Compare performance when init strong
+        strEx.ComparePerformance();
+
+        // Concatenate two string
+        strEx.StringConcatenate();
     }
     
     void StringCompare() {
@@ -96,6 +102,57 @@ public class StringExample {
         String second_str = "I work with TheWorld";
         boolean match = first_str.regionMatches(11, second_str, 12, 8);
         System.out.println("first_str[11-8] == second_str[12-8]: " + match);
+    }
+
+    void ComparePerformance() {
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < 50000; i++) {
+            String s1 = "Hello";
+            String s2 = "Hello";
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time taken for creation" 
+        + " of String literals : "+ (endTime - startTime) 
+        + " milli seconds" );
+
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < 50000; i++) {
+            String s3 = new String("Hello");
+            String s4 = new String("Hello");
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("Time taken for creation" 
+        + " of String objects : "+ (endTime - startTime) 
+        + " milli seconds" );
+    }
+
+    void StringConcatenate() {
+        long startTime = System.currentTimeMillis();
+        for(int i=0;i<5000;i++){
+            String result = "This is"
+            + "testing the"
+            + "difference"+ "between"
+            + "String"+ "and"+ "StringBuffer";
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time taken for string" 
+        + "concatenation using + operator : " 
+        + (endTime - startTime)+ " ms");
+        long startTime1 = System.currentTimeMillis();
+        for(int i=0;i<5000;i++){
+            StringBuffer result = new StringBuffer();
+            result.append("This is");
+            result.append("testing the");
+            result.append("difference");
+            result.append("between");
+            result.append("String");
+            result.append("and");
+            result.append("StringBuffer");
+        }
+        long endTime1 = System.currentTimeMillis();
+        System.out.println("Time taken for String concatenation" 
+        + "using StringBuffer : "
+        + (endTime1 - startTime1)+ " ms");
     }
 }
 
