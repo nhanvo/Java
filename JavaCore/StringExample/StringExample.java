@@ -20,6 +20,12 @@ public class StringExample {
 
         // Search string
         strEx.SearchString();
+
+        // String split
+        strEx.StringSplit();
+
+        // String region Match
+        strEx.StringRegionMatch();
     }
     
     void StringCompare() {
@@ -73,6 +79,23 @@ public class StringExample {
         String str = "Hello world";
         int index = str.indexOf('o');
         System.out.println(index);
+    }
+
+    void StringSplit() {
+        String str = "jan-feb-march";
+        String[] temp;
+        String delimeter = "-";
+        temp = str.split(delimeter);
+        for(int i = 0; i < temp.length; i++) {
+             System.out.println(temp[i] + " ");
+        }
+    }
+
+    void StringRegionMatch() {
+        String first_str = "Welcome to TheWorld";
+        String second_str = "I work with TheWorld";
+        boolean match = first_str.regionMatches(11, second_str, 12, 8);
+        System.out.println("first_str[11-8] == second_str[12-8]: " + match);
     }
 }
 
