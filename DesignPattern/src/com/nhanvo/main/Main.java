@@ -6,8 +6,10 @@
  */
 package com.nhanvo.main;
 
+import com.nhanvo.abstractfactory.PCFactory;
+import com.nhanvo.abstractfactory.ServerFactory;
 import com.nhanvo.factory.ComputerFactory;
-import com.nhanvo.factory.Computer;
+import com.nhanvo.base.Computer;
 
 /**
  *
@@ -20,12 +22,21 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        // Factory test        
+        // Factory test 
+        System.out.println("TEST METHOD FACTORY");
         Computer pc = ComputerFactory.getComputer("pc", "2 GB", "500 GB", "2.4 GHz");
         Computer server = ComputerFactory.getComputer("server", "16 GB", "1 TB", "2.9 GHz");
         
         showFactory("PC", pc);
         showFactory("SERVER", server);
+        
+        // Abstract Factory
+        System.out.println("TEST ABSTRACT FACTORY");
+        pc = new PCFactory("2 GB","500 GB","2.4 GHz").createComputer();
+        server = new ServerFactory("16 GB","1 TB","2.9 GHz").createComputer();
+        
+        System.out.println("Abstract Factory PC: " + pc);
+        System.out.println("Abstract Factory Server: " + server);
     }
     
     static void showFactory(String name, Computer com) {
