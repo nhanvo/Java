@@ -8,6 +8,7 @@ package com.nhanvo.main;
 
 import com.nhanvo.abstractfactory.PCFactory;
 import com.nhanvo.abstractfactory.ServerFactory;
+import com .nhanvo.abstractfactory.AbsComputerFactory;
 import com.nhanvo.factory.ComputerFactory;
 import com.nhanvo.base.Computer;
 
@@ -32,8 +33,8 @@ public class Main {
         
         // Abstract Factory
         System.out.println("TEST ABSTRACT FACTORY");
-        pc = new PCFactory("2 GB","500 GB","2.4 GHz").createComputer();
-        server = new ServerFactory("16 GB","1 TB","2.9 GHz").createComputer();
+        pc = AbsComputerFactory.getComputer(new PCFactory("2 GB","500 GB","2.4 GHz"));
+        server = AbsComputerFactory.getComputer(new ServerFactory("16 GB","1 TB","2.9 GHz"));
         
         System.out.println("Abstract Factory PC: " + pc);
         System.out.println("Abstract Factory Server: " + server);

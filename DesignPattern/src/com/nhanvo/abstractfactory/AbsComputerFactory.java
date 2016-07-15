@@ -5,10 +5,14 @@
  */
 package com.nhanvo.abstractfactory;
 
+import com.nhanvo.base.Computer;
+
 /**
  *
  * @author nhanvo
  */
-public class ComputerFactory {
-    
+public class AbsComputerFactory {
+    public static Computer getComputer(ComputerAbstractFactory factory){
+            return factory.createComputer();
+    }
 }
