@@ -8,7 +8,7 @@ package com.nhanvo.main;
 
 import com.nhanvo.abstractfactory.PCFactory;
 import com.nhanvo.abstractfactory.ServerFactory;
-import com .nhanvo.abstractfactory.AbsComputerFactory;
+import com.nhanvo.abstractfactory.AbsComputerFactory;
 import com.nhanvo.factory.ComputerFactory;
 import com.nhanvo.base.Computer;
 
