@@ -20,4 +20,6 @@
                 <li>javax.sql.DataSource <b>-></b> javax.sql.ConnectionPoolDataSource</li>
             </ul>
         <li>Copy file glassfish-resource.xml to Server Resource (Project)</li>
+        <li>Right click in WebDemo project and Deploy</li>
+        <li>Right click in WebDemo project and Run </li>
     </ul>
