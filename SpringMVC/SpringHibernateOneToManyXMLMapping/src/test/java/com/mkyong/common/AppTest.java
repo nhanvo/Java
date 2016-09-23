@@ -17,6 +17,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 public class AppTest extends TestCase{
+    private List<Stock> stocks = null;
 	/**
      * Create the test case
      *
@@ -25,6 +26,20 @@ public class AppTest extends TestCase{
     public AppTest( String testName )
     {
         super( testName );
+        Session session = HibernateUtil.getSessionFactory().openSession();
+            
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            stocks = (List<Stock>) session.createQuery("from Stock").list();            
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
     
     /**
@@ -40,38 +55,10 @@ public class AppTest extends TestCase{
      */
     public void testStockName()
     {
-    	Session session = HibernateUtil.getSessionFactory().openSession();
-    	List<Stock> stocks = null;
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			stocks = (List<Stock>) session.createQuery("from Stock").list();			
-			tx.commit();
-		} catch (HibernateException e) {
-			if (tx != null)
-				tx.rollback();
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
         assertEquals(stocks.get(0).getStockName(), "PADINI");
     }
     
     public void testStockCode() {
-    	Session session = HibernateUtil.getSessionFactory().openSession();
-    	List<Stock> stocks = null;
-		Transaction tx = null;
-		try {
-			tx = session.beginTransaction();
-			stocks = (List<Stock>) session.createQuery("from Stock").list();			
-			tx.commit();
-		} catch (HibernateException e) {
-			if (tx != null)
-				tx.rollback();
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
         assertEquals(stocks.get(0).getStockCode(), "7052");
     }
 }
