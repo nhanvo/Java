@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
-<#-- @ftlvariable name="currentUser" type="org.nhanvo.librarybook.domain.CurrentUser" -->
+<#-- @ftlvariable name="currentUser" type="org.nhanvo.shopdemo.model.CurrentUser" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

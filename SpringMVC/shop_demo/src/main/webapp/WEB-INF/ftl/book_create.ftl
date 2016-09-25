@@ -1,5 +1,5 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
-<#-- @ftlvariable name="form" type="org.nhanvo.librarybook.domain.BookCreateForm" -->
+<#-- @ftlvariable name="form" type="org.nhanvo.shopdemo.model.BookCreateForm" -->
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
 <html lang="en">

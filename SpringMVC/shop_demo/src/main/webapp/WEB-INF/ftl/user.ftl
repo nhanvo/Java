@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="user" type="org.nhanvo.librarybook.domain.User" -->
+<#-- @ftlvariable name="user" type="org.nhanvo.shopdemo.model.User" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

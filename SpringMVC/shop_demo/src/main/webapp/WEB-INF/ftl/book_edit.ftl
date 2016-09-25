@@ -1,6 +1,6 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
-<#-- @ftlvariable name="book" type="org.nhanvo.librarybook.domain.Book" -->
-<#-- @ftlvariable name="form" type="org.nhanvo.librarybook.domain.BookCreateForm" -->
+<#-- @ftlvariable name="book" type="org.nhanvo.shopdemo.model.Book" -->
+<#-- @ftlvariable name="form" type="org.nhanvo.shopdemo.model.BookCreateForm" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

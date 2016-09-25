@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="book" type="org.nhanvo.librarybook.domain.Book" -->
+<#-- @ftlvariable name="book" type="org.nhanvo.shopdemo.model.Book" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

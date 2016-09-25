@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="users" type="java.util.List<org.nhanvo.librarybook.domain.User>" -->
+<#-- @ftlvariable name="users" type="java.util.List<org.nhanvo.shopdemo.model.User>" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
