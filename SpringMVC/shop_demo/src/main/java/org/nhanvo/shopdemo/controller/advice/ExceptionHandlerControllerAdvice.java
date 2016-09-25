@@ -1,4 +1,4 @@
-package org.nhanvo.shopdemo.controller;
+package org.nhanvo.shopdemo.controller.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

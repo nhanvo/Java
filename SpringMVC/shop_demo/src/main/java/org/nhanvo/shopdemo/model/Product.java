@@ -3,38 +3,40 @@ package org.nhanvo.shopdemo.model;
 import java.util.Date;
 
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 /**
  * 
  * @author nhanvo
- * Book POJO class, mapping data to object from database by Hibernate
+ * Product POJO class, mapping data to object from database by Hibernate
  */
 @Entity
-@Table(name = "book")
-public class Book {
+@Table(name = "product")
+public class Product {
 	// Automatic generate
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id", nullable = false, updatable = false)
 	private Long id;
 	
-	// Title of book
-	@Column(name="title", nullable = false)
-	private String title;
+	// Title of product
+	@Column(name="name", nullable = false)
+	private String name;
 	
-	// Author of book
-	@Column(name="author", nullable = false)	
-	private String author;
+	// Author of product
+	@Column(name="image", nullable = false)	
+	private String image;
 	
-	// Description of book
+	// Description of product
 	@Column(name="description", nullable = false)	
 	private String description;	
 	
-	// Date created of book
+	// Date created of product
 	@Column(name="createdat", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
 	
-	// Date updated of book
+	// Date updated of product
 	@Column(name="updateat", nullable = false)	
 	@Temporal(TemporalType.DATE)
 	private Date updateAt;
@@ -42,26 +44,27 @@ public class Book {
 	//=========================================================================
 	// Get and Set function
 	//=========================================================================
-	public String getTitle() {
-		return title;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getImage() {
+		return image;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getDescription() {
 		return description;
 	}
-
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}

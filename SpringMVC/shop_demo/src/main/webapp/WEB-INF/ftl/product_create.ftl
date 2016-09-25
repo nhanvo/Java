@@ -1,11 +1,10 @@
 <#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
-<#-- @ftlvariable name="form" type="org.nhanvo.shopdemo.model.BookCreateForm" -->
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Create a new book</title>
+    <title>Create a new product</title>
 </head>
 <body>
 <nav role="navigation">
@@ -14,18 +13,18 @@
     </ul>
 </nav>
 
-<h1>Create a new book</h1>
+<h1>Create a new product</h1>
 
-<form role="form" name="form" action="" method="post">
+<form role="form" name="createProductForm" action="" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
     <div>
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" required autofocus/>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required autofocus/>
     </div>
     <div>
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author" required/>
+        <label for="image">Image</label>
+        <input type="text" name="image" id="image" required/>
     </div>
     <div>
         <label for="description">Description</label>

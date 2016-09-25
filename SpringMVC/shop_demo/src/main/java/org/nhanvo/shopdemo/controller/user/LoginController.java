@@ -1,4 +1,4 @@
-package org.nhanvo.shopdemo.controller;
+package org.nhanvo.shopdemo.controller.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
