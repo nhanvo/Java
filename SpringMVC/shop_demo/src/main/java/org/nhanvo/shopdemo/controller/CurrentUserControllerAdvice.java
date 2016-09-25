@@ -1,6 +1,6 @@
-package org.nhanvo.librarybook.controller;
+package org.nhanvo.shopdemo.controller;
 
-import org.nhanvo.librarybook.model.CurrentUser;
+import org.nhanvo.shopdemo.model.CurrentUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;

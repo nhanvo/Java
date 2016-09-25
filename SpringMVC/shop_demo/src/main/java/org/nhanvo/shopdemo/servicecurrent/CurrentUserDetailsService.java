@@ -1,8 +1,8 @@
-package org.nhanvo.librarybook.servicecurrent;
+package org.nhanvo.shopdemo.servicecurrent;
 
-import org.nhanvo.librarybook.model.CurrentUser;
-import org.nhanvo.librarybook.model.User;
-import org.nhanvo.librarybook.service.UserService;
+import org.nhanvo.shopdemo.model.CurrentUser;
+import org.nhanvo.shopdemo.model.User;
+import org.nhanvo.shopdemo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

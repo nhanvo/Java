@@ -1,4 +1,4 @@
-package org.nhanvo.librarybook.config;
+package org.nhanvo.shopdemo.config;
 
 import java.util.Properties;
 

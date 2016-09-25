@@ -1,4 +1,4 @@
-package org.nhanvo.librarybook;
+package org.nhanvo.shopdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

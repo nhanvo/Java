@@ -1,7 +1,7 @@
-package org.nhanvo.librarybook.servicecurrent;
+package org.nhanvo.shopdemo.servicecurrent;
 
-import org.nhanvo.librarybook.model.CurrentUser;
-import org.nhanvo.librarybook.model.Role;
+import org.nhanvo.shopdemo.model.CurrentUser;
+import org.nhanvo.shopdemo.model.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

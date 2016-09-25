@@ -1,7 +1,7 @@
-package org.nhanvo.librarybook.domain.validator;
+package org.nhanvo.shopdemo.domain.validator;
 
-import org.nhanvo.librarybook.model.UserCreateForm;
-import org.nhanvo.librarybook.service.UserService;
+import org.nhanvo.shopdemo.model.UserCreateForm;
+import org.nhanvo.shopdemo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package org.nhanvo.librarybook.repository;
+package org.nhanvo.shopdemo.repository;
 
 import java.io.Serializable;
 

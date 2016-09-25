@@ -1,11 +1,11 @@
-package org.nhanvo.librarybook.service;
+package org.nhanvo.shopdemo.service;
 
 import java.util.Collection;
 import java.util.Optional;
 
-import org.nhanvo.librarybook.model.Book;
-import org.nhanvo.librarybook.model.BookCreateForm;
-import org.nhanvo.librarybook.model.BookEditForm;
+import org.nhanvo.shopdemo.model.Book;
+import org.nhanvo.shopdemo.model.BookCreateForm;
+import org.nhanvo.shopdemo.model.BookEditForm;
 
 /**
  * 

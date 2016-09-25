@@ -1,6 +1,6 @@
-package org.nhanvo.librarybook.servicecurrent;
+package org.nhanvo.shopdemo.servicecurrent;
 
-import org.nhanvo.librarybook.model.CurrentUser;
+import org.nhanvo.shopdemo.model.CurrentUser;
 
 /**
  * 

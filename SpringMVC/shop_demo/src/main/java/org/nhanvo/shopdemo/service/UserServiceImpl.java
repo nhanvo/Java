@@ -1,8 +1,8 @@
-package org.nhanvo.librarybook.service;
+package org.nhanvo.shopdemo.service;
 
-import org.nhanvo.librarybook.model.User;
-import org.nhanvo.librarybook.model.UserCreateForm;
-import org.nhanvo.librarybook.repository.UserRepository;
+import org.nhanvo.shopdemo.model.User;
+import org.nhanvo.shopdemo.model.UserCreateForm;
+import org.nhanvo.shopdemo.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

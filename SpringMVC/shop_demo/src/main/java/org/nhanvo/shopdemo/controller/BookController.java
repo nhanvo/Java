@@ -1,4 +1,4 @@
-package org.nhanvo.librarybook.controller;
+package org.nhanvo.shopdemo.controller;
 
 import java.util.NoSuchElementException;
 
@@ -6,9 +6,9 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.nhanvo.librarybook.model.BookCreateForm;
-import org.nhanvo.librarybook.model.BookEditForm;
-import org.nhanvo.librarybook.service.BookService;
+import org.nhanvo.shopdemo.model.BookCreateForm;
+import org.nhanvo.shopdemo.model.BookEditForm;
+import org.nhanvo.shopdemo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;

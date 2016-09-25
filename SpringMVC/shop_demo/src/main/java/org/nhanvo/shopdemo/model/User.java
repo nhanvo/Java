@@ -1,4 +1,4 @@
-package org.nhanvo.librarybook.model;
+package org.nhanvo.shopdemo.model;
 
 import javax.persistence.*;
 

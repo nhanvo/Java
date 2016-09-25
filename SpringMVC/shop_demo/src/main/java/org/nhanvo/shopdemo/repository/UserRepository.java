@@ -1,6 +1,6 @@
-package org.nhanvo.librarybook.repository;
+package org.nhanvo.shopdemo.repository;
 
-import org.nhanvo.librarybook.model.User;
+import org.nhanvo.shopdemo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
