@@ -27,6 +27,7 @@
         <li><a href="/user/create">Create a new user</a></li>
         <li><a href="/users">View all users</a></li>        
     </#if>
+    <li><a href="/index">View Index</a></li>   
     </ul>
 </nav>
 </body>

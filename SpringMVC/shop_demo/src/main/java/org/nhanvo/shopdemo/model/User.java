@@ -31,30 +31,16 @@ public class User {
     private Role role;
 
     // First name
-    @Column(name = "firstname", nullable = false)
-    private String firstname;
+    @Column(name = "username", nullable = false)
+    private String username;
     
-    // Last name
-    @Column(name = "lastname", nullable = false)
-    private String lastname;
 
-    //=========================================================================
-  	// Get and Set function
-  	//=========================================================================
-    public String getLastname() {
-		return lastname;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public Long getId() {
@@ -84,17 +70,4 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email.replaceFirst("@.*", "@***") +
-                ", passwordHash='" + passwordHash.substring(0, 10) +
-                ", role=" + role +
-                ", firstname=" + firstname +
-                ", lastname=" + lastname +
-                '}';
-    }
-    //=========================================================================
 }

@@ -1,17 +1,15 @@
 package org.nhanvo.shopdemo.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.nhanvo.shopdemo.model.User;
 import org.nhanvo.shopdemo.model.UserCreateForm;
 import org.nhanvo.shopdemo.repository.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Collection;
-import java.util.Optional;
 
 /**
  * 
@@ -22,10 +20,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-	// Define logger
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
-    
-    // User Repository
+	// User Repository
     private final UserRepository userRepository;
 
     /**
@@ -42,7 +37,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public Optional<User> getUserById(long id) {
-        LOGGER.debug("Getting user={}", id);
         return Optional.ofNullable(userRepository.findOne(id));
     }
 
@@ -51,7 +45,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public Optional<User> getUserByEmail(String email) {
-        LOGGER.debug("Getting user by email={}", email.replaceFirst("@.*", "@***"));
         return userRepository.findOneByEmail(email);
     }
 
@@ -59,8 +52,7 @@ public class UserServiceImpl implements UserService {
      * Override from parent
      */
     @Override
-    public Collection<User> getAllUsers() {
-        LOGGER.debug("Getting all users");
+    public List<User> getAllUsers() {
         return userRepository.findAll(new Sort("email"));
     }
 
@@ -73,10 +65,8 @@ public class UserServiceImpl implements UserService {
         user.setEmail(form.getEmail());
         user.setPasswordHash(new BCryptPasswordEncoder().encode(form.getPassword()));
         user.setRole(form.getRole());
-        user.setFirstname(form.getFirstname());
-        user.setLastname(form.getLastname());     
-        LOGGER.debug(user.getPasswordHash());
+        user.setUsername(form.getUsername());  
         return userRepository.save(user);
     }
-
+    
 }

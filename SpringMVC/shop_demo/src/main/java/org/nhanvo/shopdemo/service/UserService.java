@@ -1,6 +1,6 @@
 package org.nhanvo.shopdemo.service;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import org.nhanvo.shopdemo.model.User;
@@ -31,7 +31,7 @@ public interface UserService {
      *  Get all users
      * @return List all users
      */
-    Collection<User> getAllUsers();
+    List<User> getAllUsers();
 
     /**
      * Create new user

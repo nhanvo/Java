@@ -10,6 +10,10 @@ import javax.validation.constraints.NotNull;
  * Create new user form class
  */
 public class UserCreateForm {
+	
+	@NotEmpty
+	private Long Id;
+	
 	// Email
     @NotEmpty
     private String email = "";
@@ -28,29 +32,32 @@ public class UserCreateForm {
 
     // First name
     @NotEmpty
-    private String firstname = "";
+    private String username = "";
     
-    // Last name
-    @NotEmpty
-    private String lastname = "";
-
-    //=========================================================================
-    // Set and Get functions
-    //=========================================================================
-    public String getLastname() {
-		return lastname;
+	public UserCreateForm() {
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public UserCreateForm(Long Id, String email, Role role, String username) {
+		this.Id = Id;
+		this.email = email;
+		this.role = role;
+		this.username = username;
+	}
+	
+	public Long getId() {
+		return Id;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public void setId(Long id) {
+		Id = id;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getEmail() {
@@ -84,18 +91,4 @@ public class UserCreateForm {
     public void setRole(Role role) {
         this.role = role;
     }
-
-    @Override
-    public String toString() {
-        return "UserCreateForm{" +
-                "email='" + email.replaceFirst("@.+", "@***") + '\'' +
-                ", password=***" + '\'' +
-                ", passwordRepeated=***" + '\'' +
-                ", role=" + role +
-                ", firstname=" + firstname +
-                ", lastname=" + lastname +
-                '}';
-    }
-    //=========================================================================
-
 }
