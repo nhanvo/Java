@@ -2,8 +2,6 @@ package org.nhanvo.shopdemo.domain.validator;
 
 import org.nhanvo.shopdemo.model.UserCreateForm;
 import org.nhanvo.shopdemo.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -17,10 +15,7 @@ import org.springframework.validation.Validator;
 @Component
 public class UserCreateFormValidator implements Validator {
 
-	// Define logger
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserCreateFormValidator.class);
-    
-    // User service
+	// User service
     private final UserService userService;
 
     /**
@@ -45,7 +40,6 @@ public class UserCreateFormValidator implements Validator {
      */
     @Override
     public void validate(Object target, Errors errors) {
-        LOGGER.debug("Validating {}", target);
         UserCreateForm form = (UserCreateForm) target;
         validatePasswords(errors, form);
         validateEmail(errors, form);

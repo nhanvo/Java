@@ -1,4 +1,4 @@
-package org.nhanvo.shopdemo.controller.user;
+package org.nhanvo.shopdemo.controller;
 
 import org.nhanvo.shopdemo.model.CurrentUser;
 import org.springframework.security.core.Authentication;

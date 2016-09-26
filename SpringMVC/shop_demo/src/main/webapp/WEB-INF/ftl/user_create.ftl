@@ -1,4 +1,3 @@
-<#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="form" type="org.nhanvo.shopdemo.model.UserCreateForm" -->
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
@@ -17,7 +16,6 @@
 <h1>Create a new user</h1>
 
 <form role="form" name="form" action="" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
     <div>
         <label for="email">Email address</label>
@@ -32,13 +30,8 @@
         <input type="password" name="passwordRepeated" id="passwordRepeated" required/>
     </div>
     <div>
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname" required/>
-    </div>
-
-    <div>
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname" required/>
+        <label for="username">User Name</label>
+        <input type="text" name="username" id="username" required/>
     </div>
 
     <div>

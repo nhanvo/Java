@@ -1,4 +1,3 @@
-<#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#-- @ftlvariable name="product" type="org.nhanvo.shopdemo.model.Product" -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +15,6 @@
 <h1>Edit product</h1>
 
 <form role="form" name="editProductForm" action="/product/edit/${product.id}" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
     <div>
         <label for="name">Name</label>
         <input type="text" name="name" id="name" value="${product.name}" required autofocus/>

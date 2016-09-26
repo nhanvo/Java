@@ -38,6 +38,25 @@ public interface UserService {
      * @param form User create form
      * @return User created
      */
-    User create(UserCreateForm form);
+    User create(UserCreateForm userform);
+    
+    /**
+     * Update user
+     * @param userform
+     * @return
+     */
+    public User update(Long id, UserCreateForm userform);
+    
+    /**
+     * Delete user
+     * @param id
+     * @return
+     */
+    public void delete(Long id);
+    
+    /**
+     * Check user is exist
+     */
+	public boolean isUserExist(String username);
 
 }

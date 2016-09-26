@@ -2,7 +2,7 @@
 
 angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $q){
 
-    var REST_SERVICE_URI = 'http://localhost:8080/userlist';
+    var REST_SERVICE_URI = 'http://localhost:8080';
 
     var factory = {
         fetchAllUsers: fetchAllUsers,
@@ -15,7 +15,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function fetchAllUsers() {
         var deferred = $q.defer();  
-        $http.get(REST_SERVICE_URI)
+        $http.get(REST_SERVICE_URI + '/userlist/')
             .then(
             function (response) {
             	deferred.resolve(response.data);
@@ -30,7 +30,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function createUser(user) {
         var deferred = $q.defer();
-        $http.post(REST_SERVICE_URI, user)
+        $http.post(REST_SERVICE_URI + '/user/create/', user)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -46,7 +46,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function updateUser(user, id) {
         var deferred = $q.defer();
-        $http.put(REST_SERVICE_URI+id, user)
+        $http.put(REST_SERVICE_URI + '/user/edit/'+id, user)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -61,7 +61,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function deleteUser(id) {
         var deferred = $q.defer();
-        $http.delete(REST_SERVICE_URI+id)
+        $http.delete(REST_SERVICE_URI + '/user/delete/' + id)
             .then(
             function (response) {
                 deferred.resolve(response.data);

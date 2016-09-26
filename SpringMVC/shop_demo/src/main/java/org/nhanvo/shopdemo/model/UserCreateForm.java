@@ -42,8 +42,16 @@ public class UserCreateForm {
 		this.email = email;
 		this.role = role;
 		this.username = username;
-	}
+	}	
 	
+	public UserCreateForm(String email, String password, Role role, String username) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.username = username;
+	}
+
 	public Long getId() {
 		return Id;
 	}

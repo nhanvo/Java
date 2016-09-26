@@ -1,9 +1,10 @@
 'use strict';
 
-angular.module('myApp').controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
+angular.module('myApp').controller('UserController', ['$scope', 'UserService', '$q', '$http', function($scope, UserService, $q, $http) {
     var self = this;
-    self.user={id:null,username:'',role:'',email:''};
-    self.users=[];    
+    self.user={id:null,username:'', email:'Enter your email',password: '', role:'USER'};
+    self.users=[];   
+    self.roles = ["ADMIN", "USER"];
 
     self.submit = submit;
     self.edit = edit;
@@ -18,6 +19,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
             .then(
             function(d) {
                 self.users = d;
+                console.log(self.users);
             },
             function(errResponse){
                 console.error('Error while fetching Users');
@@ -57,13 +59,11 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
 
     function submit() {
         if(self.user.id===null){
-            console.log('Saving New User', self.user);
             createUser(self.user);
         }else{
             updateUser(self.user, self.user.id);
             console.log('User updated with id ', self.user.id);
         }
-        reset();
     }
 
     function edit(id){
@@ -77,7 +77,6 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     }
 
     function remove(id){
-        console.log('id to be deleted', id);
         if(self.user.id === id) {//clean form if the user to be deleted is shown there.
             reset();
         }
@@ -86,8 +85,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
 
 
     function reset(){
-        self.user={id:null,username:'',address:'',email:''};
+        self.user={id:null,username:'', email:'',password: '', role:'USER'};
         $scope.myForm.$setPristine(); //reset Form
     }
-
 }]);

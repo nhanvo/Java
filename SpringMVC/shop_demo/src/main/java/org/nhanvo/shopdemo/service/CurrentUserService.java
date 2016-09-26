@@ -1,4 +1,4 @@
-package org.nhanvo.shopdemo.servicecurrent;
+package org.nhanvo.shopdemo.service;
 
 import org.nhanvo.shopdemo.model.CurrentUser;
 

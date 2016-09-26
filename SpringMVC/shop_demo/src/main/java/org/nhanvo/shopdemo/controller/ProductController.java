@@ -1,4 +1,4 @@
-package org.nhanvo.shopdemo.controller.product;
+package org.nhanvo.shopdemo.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,11 +6,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
-import org.nhanvo.shopdemo.controller.user.LoginController;
 import org.nhanvo.shopdemo.model.Product;
 import org.nhanvo.shopdemo.service.ProductService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -27,7 +24,6 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class ProductController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	private final ProductService productService;
 
 	@Autowired

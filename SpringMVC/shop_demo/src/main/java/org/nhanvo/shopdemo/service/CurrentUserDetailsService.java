@@ -1,10 +1,8 @@
-package org.nhanvo.shopdemo.servicecurrent;
+package org.nhanvo.shopdemo.service;
 
 import org.nhanvo.shopdemo.model.CurrentUser;
 import org.nhanvo.shopdemo.model.User;
 import org.nhanvo.shopdemo.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,10 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CurrentUserDetailsService implements UserDetailsService {
 
-	// Logger
-    private static final Logger LOGGER = LoggerFactory.getLogger(CurrentUserDetailsService.class);
-    
-    // User service
+	// User service
     private final UserService userService;
 
     /**
@@ -39,8 +34,7 @@ public class CurrentUserDetailsService implements UserDetailsService {
      */
     @Override
     public CurrentUser loadUserByUsername(String email) throws UsernameNotFoundException {
-        LOGGER.debug("Authenticating user with email={}", email.replaceFirst("@.*", "@***"));
-        User user = userService.getUserByEmail(email)
+       User user = userService.getUserByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException(String.format("User with email=%s was not found", email)));
         return new CurrentUser(user);
     }

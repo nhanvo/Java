@@ -50,6 +50,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
             .and()
             .rememberMe();
+        http.csrf().disable();
     }
 
     /**

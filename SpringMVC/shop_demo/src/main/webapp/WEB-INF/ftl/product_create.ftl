@@ -1,4 +1,3 @@
-<#-- @ftlvariable name="_csrf" type="org.springframework.security.web.csrf.CsrfToken" -->
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +15,6 @@
 <h1>Create a new product</h1>
 
 <form role="form" name="createProductForm" action="" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
     <div>
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required autofocus/>

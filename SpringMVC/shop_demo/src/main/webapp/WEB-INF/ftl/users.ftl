@@ -28,8 +28,7 @@
     <#list users as user>
     <tr>
         <td><a href="/user/${user.id}">${user.email}</a></td>
-        <td>${user.firstname}</td>
-        <td>${user.lastname}</td>
+        <td>${user.username}</td>
         <td>${user.role}</td>
     </tr>
     </#list>
