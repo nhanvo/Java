@@ -1,7 +1,7 @@
-INSERT INTO user (email, password_hash, role, username)
+INSERT INTO user (email, password, role, username)
 VALUES ('admin@localhost', '$2a$10$ebyC4Z5WtCXXc.HGDc1Yoe6CLFzcntFmfse6/pTj7CeDY5I05w16C', 'ADMIN', 'admin');
 
-INSERT INTO user (email, password_hash, role, username)
+INSERT INTO user (email, password, role, username)
 VALUES ('nhanvo@localhost', '$2a$10$pgzKwJaj8bG.hyOqv4jmK.2dpBPZLDVLrCkSsveCd214sps0sMFO2', 'ADMIN', 'nhanvo');
 
 

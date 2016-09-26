@@ -1,12 +1,20 @@
 package org.nhanvo.shopdemo.model;
  
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -46,9 +54,44 @@ public class Product {
 	@Temporal(TemporalType.DATE)
 	private Date updateAt;
 	
-	//=========================================================================
-	// Get and Set function
-	//=========================================================================
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "SHOP_ID", nullable = false)
+	private Shop shop;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "product_user", joinColumns = { 
+			@JoinColumn(name = "PRODUCT_ID", nullable = false, updatable = false) }, 
+			inverseJoinColumns = { @JoinColumn(name = "USER_ID", 
+					nullable = false, updatable = false) })
+	private Set<User> users = new HashSet<User>(0);
+	
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
+	public Shop getShop() {
+		return shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
+	}
+
+	public Product() {
+	}
+
+	public Product(String name, String image, String description, Date createdAt, Date updateAt) {
+		super();
+		this.name = name;
+		this.image = image;
+		this.description = description;
+		this.createdAt = createdAt;
+		this.updateAt = updateAt;
+	}
 
 	public String getName() {
 		return name;
