@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="helloBean" class="com.nhanvo.LooselyCoupled.Spring.HelloWorld">
+		<property name="name" value="NhanVo" />
+	</bean>
+	
+	<bean id="OutputHelper" class="com.nhanvo.LooselyCoupled.Spring.OutputHelper">
+		<property name="outputGenerator" ref="CsvOutputGenerator"></property>
+	</bean>
+	<bean id="CsvOutputGenerator" class="com.nhanvo.LooselyCoupled.model.CsvOutputGenerator"></bean>
+	<bean id="JsonOutputGenerator" class="com.nhanvo.LooselyCoupled.model.JsonOutputGenerator"></bean>
+</beans>
